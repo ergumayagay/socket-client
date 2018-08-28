@@ -1,4 +1,4 @@
-package org.tap.socketclient;
+package org.emil.socketclient;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -16,12 +16,12 @@ public class SocketClientApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SocketClientApplication.class, args);
 	}
-	
+
 	@Bean
-	public CommandLineRunner run(SocketClientService socketClientService) {
+	public CommandLineRunner run(SocketClientService socketClientService, SocketClientProperties socketClientProperties) {
 		return args ->{
 			
-			socketClientService.startConnection();
+			
 			String response = socketClientService.sendMessage("test");
 			logger.info("Message is {}", response);
 			socketClientService.stopConnection();
