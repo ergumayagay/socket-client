@@ -30,7 +30,8 @@ public class SocketClientService {
 		try {
 			logger.info("Host: {}", clientSocket.getInetAddress());
 			logger.info("Port: {}", clientSocket.getPort());
-			logger.info("Message: {}", in.readLine());
+			logger.info("Sending Message : {}", message);
+			out.println(message);
 			return in.readLine();
 			
 		} catch (IOException e) {

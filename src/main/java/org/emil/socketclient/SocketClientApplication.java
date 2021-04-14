@@ -20,10 +20,9 @@ public class SocketClientApplication {
 	@Bean
 	public CommandLineRunner run(SocketClientService socketClientService, SocketClientProperties socketClientProperties) {
 		return args ->{
-			
-			
+
 			String response = socketClientService.sendMessage("test");
-			logger.info("Message is {}", response);
+			logger.info("response from server: {}", response);
 			socketClientService.stopConnection();
 		};
 	}
